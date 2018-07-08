@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the index for entity.
+    -->
+    <changeSet id="20180708030000-1" author="liquibase">
+        
+        <createIndex 
+            tableName="cart_item"
+            indexName="cart_item_cart_id_idx">
+        	<column name="cart_id"/>
+    	</createIndex>
+    	
+    	<createIndex 
+            tableName="cart_item"
+            indexName="cart_item_product_id_idx">
+        	<column name="product_id"/>
+    	</createIndex>
+
+    </changeSet>
+</databaseChangeLog>

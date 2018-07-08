@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180708024039_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180708024237_added_entity_Cart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180708024653_added_entity_CartItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180708024653_added_entity_constraints_CartItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180708030000_added_index.xml" relativeToChangelogFile="false"/>
+    
+</databaseChangeLog>

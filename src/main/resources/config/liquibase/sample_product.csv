@@ -1,0 +1,5 @@
+id;name;price;quantity;visible
+1;product 1;30;95;true
+2;product 2;10;50;true
+3;product 3;5;500;true
+4;product 4;20;100;false

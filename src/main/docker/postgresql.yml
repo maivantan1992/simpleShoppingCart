@@ -1,0 +1,9 @@
+version: '2'
+services:
+    assignment-postgresql:
+        image: postgres:9.6.5
+        environment:
+            - POSTGRES_USER=assignment
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
