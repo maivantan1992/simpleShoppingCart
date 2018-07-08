@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -184,7 +183,6 @@ public class ShoppingCartResourceIntTest {
  		restShoppingCartMockMvc.perform(post("/api//shopping-carts/add-item")
  				.contentType(TestUtil.APPLICATION_JSON_UTF8)
  				.content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
- 				.andDo(print())
  				.andExpect(status().isBadRequest());
 
         List<CartItem> cartItemList = cartItemRepository.findAll();
@@ -203,7 +201,6 @@ public class ShoppingCartResourceIntTest {
  		restShoppingCartMockMvc.perform(post("/api//shopping-carts/add-item")
  				.contentType(TestUtil.APPLICATION_JSON_UTF8)
  				.content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
- 				.andDo(print())
  				.andExpect(status().isBadRequest());
 
         List<CartItem> cartItemList = cartItemRepository.findAll();
@@ -220,7 +217,6 @@ public class ShoppingCartResourceIntTest {
 		restShoppingCartMockMvc.perform(post("/api/shopping-carts/add-item")
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-				.andDo(print())
 				.andExpect(status().isBadRequest());
 
 		// Validate the CartItem in the database
@@ -237,7 +233,6 @@ public class ShoppingCartResourceIntTest {
 		restShoppingCartMockMvc.perform(post("/api/shopping-carts/add-item")
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-				.andDo(print())
 				.andExpect(status().isCreated())
 				.andExpect(jsonPath("$.id").value(cartItem.getCart().getId().intValue()))
 	            .andExpect(jsonPath("$.cartItems.[*].quantity").value(hasItem(cartItem.getQuantity())))
@@ -260,7 +255,6 @@ public class ShoppingCartResourceIntTest {
 		restShoppingCartMockMvc.perform(post("/api/shopping-carts/add-item")
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-				.andDo(print())
 				.andExpect(status().isBadRequest());
 
 		// Validate the CartItem in the database
@@ -278,7 +272,6 @@ public class ShoppingCartResourceIntTest {
 		restShoppingCartMockMvc.perform(post("/api/shopping-carts/add-item")
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-				.andDo(print())
 				.andExpect(status().isBadRequest());
 
 		// Validate the CartItem in the database
@@ -304,7 +297,6 @@ public class ShoppingCartResourceIntTest {
         restShoppingCartMockMvc.perform(put("/api/shopping-carts/update-item")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-	        .andDo(print())
 			.andExpect(status().isOk())
 			.andExpect(jsonPath("$.id").value(cartItem.getCart().getId().intValue()))
 			.andExpect(jsonPath("$.cartItems.[*].id").value(hasItem(cartItem.getId().intValue())))
@@ -336,7 +328,6 @@ public class ShoppingCartResourceIntTest {
         restShoppingCartMockMvc.perform(put("/api/shopping-carts/update-item")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-	        .andDo(print())
 			.andExpect(status().isBadRequest());
 
         // Validate the CartItem in the database
@@ -364,7 +355,6 @@ public class ShoppingCartResourceIntTest {
         restShoppingCartMockMvc.perform(put("/api/shopping-carts/update-item")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-	        .andDo(print())
 			.andExpect(status().isBadRequest());
 
         // Validate the CartItem in the database
@@ -392,7 +382,6 @@ public class ShoppingCartResourceIntTest {
         restShoppingCartMockMvc.perform(put("/api/shopping-carts/update-item")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(cartItemDTO)))
-	        .andDo(print())
 			.andExpect(status().isBadRequest());
 
         // Validate the CartItem in the database
